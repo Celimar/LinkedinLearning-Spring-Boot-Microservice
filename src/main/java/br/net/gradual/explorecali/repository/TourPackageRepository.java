@@ -2,10 +2,12 @@ package br.net.gradual.explorecali.repository;
 
 import br.net.gradual.explorecali.model.TourPackage;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.Optional;
 
+@RepositoryRestResource(collectionResourceRel = "packages", path = "packages")
 public interface TourPackageRepository extends PagingAndSortingRepository<TourPackage, String> {
     @Override
     @RestResource(exported = false)
